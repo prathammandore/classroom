@@ -1,0 +1,105 @@
+
+<html>
+<head>
+  <title>Register</title>
+  <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-inverse bg-dark" style="height: 65px;width: auto">
+      <div class="container-fluid">
+        <div class="navbar-header" >
+        <a class="navbar-brand" style="font-size: 25px"><b>Vishwakarma Institute of Technology</b></a>
+        </div>
+
+
+          <ul class="nav navbar-nav" style="font-size: 20px">
+
+
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right" style="font-size: 20px">
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in" mx-0px> LOGIN</span></a></li>
+
+          </ul>
+      </div>
+  </nav>
+  {% if messages %}
+      {% for message in messages %}
+  <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+{{ message }}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+     {% endfor %}
+  {% endif %}
+
+
+
+  <section>
+
+    <div class="container con" align="" >
+      <br>
+      <div class="logo" align="center"><h3><img src="data:image/png;base64,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" alt="" style="height: 200px;width: 300px"></h3></div>
+
+      <form method="post" action="/register">
+
+  <div class="form-group row">
+    <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+    <div class="col-sm-10">
+   <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname">
+  </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+    <div class="col-sm-10">
+   <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lname">
+  </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email Id</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" placeholder="Email Id" name="email">
+    </div>
+  </div>
+
+   <div class="form-group row">
+     <label for="password" class="col-sm-2 col-form-label">Password</label>
+     <div class="col-sm-10">
+       <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+     </div>
+   </div>
+
+   <div class="form-group row">
+     <label for="password2" class="col-sm-2 col-form-label">Enter Password Again</label>
+     <div class="col-sm-10">
+       <input type="password" class="form-control" id="password2" placeholder="Enter Password Again" name="password2">
+     </div>
+   </div>
+
+   </fieldset>
+
+   <div class="form-group row">
+     <div class="col-sm-10">
+       <button type="submit" class="btn btn-primary">Sign in</button>
+     </div>
+   </div>
+
+      {% csrf_token %}
+    </form>
+
+  </div>
+</section>
+
+  </body>
+</html>
